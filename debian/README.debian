@@ -1,0 +1,19 @@
+Dropped flags for invoking Doclava
+===========================================
+
+There are some flags that we drop for some reasons. Either that we do not need
+them, or that we do not have the needed files within this package.
+
+  * Doclava:
+    * -bootclasspath
+    * -encoding UTF-8
+    * -G debian/out/proguard_options.txt
+    * -hdf page.build {BUILD_ID}
+      -hdf page.now "{TIME}"
+      (For ensuring reprodicibility)
+    * -J-Xmx1280m
+    * -knowntags ./frameworks/base/docs/knowntags.txt
+    * -P debian/out/public_resources.xml
+    * -templatedir build/tools/droiddoc/templates-sdk
+
+ -- Kai-Chung Yan <seamlikok@gmail.com>  Thu, 09 Jun 2016 11:59:00 +0800

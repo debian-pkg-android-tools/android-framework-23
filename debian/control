@@ -1,0 +1,34 @@
+Source: android-framework-23
+Section: java
+Priority: optional
+Maintainer: Android Tools Maintainers <android-tools-devel@lists.alioth.debian.org>
+Uploaders: Hans-Christoph Steiner <hans@eds.org>,
+           Kai-Chung Yan <seamlikok@gmail.com>,
+           Chirayu Desai <chirayudesai1@gmail.com>
+Build-Depends: aapt [amd64 i386],
+               aidl [amd64 i386],
+               debhelper (>= 9),
+               gradle-debian-helper,
+               maven-repo-helper,
+Build-Depends-Indep: android-logtags-tools,
+                     default-jdk (>= 2:1.7),
+                     libdoclava-aosp-java,
+                     unzip
+Standards-Version: 3.9.8
+Homepage: https://android.googlesource.com
+Vcs-Git: https://anonscm.debian.org/git/android-tools/android-framework-23.git
+Vcs-Browser: https://anonscm.debian.org/cgit/android-tools/android-framework-23.git
+
+Package: libandroid-23-java
+Architecture: all
+Depends: ${misc:Depends}
+Description: Android platform framework for API Level 23 (Marshmallow)
+ This package provides "android.jar" in the "Android platforms" that is used to
+ build an Android application.
+
+Package: libandroid-uiautomator-23-java
+Architecture: all
+Depends: libandroid-23-java, ${misc:Depends}
+Description: UI Automator framework for API Level 23 (Marshmallow)
+ This package provides "uiautomator.jar" in the "Android platforms" that is used
+ to build an Android application.

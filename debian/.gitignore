@@ -1,0 +1,13 @@
+.debhelper/
+.gradle/
+.gradlehome/
+.mh/
+*.log
+*.substvars
+build/
+debhelper-build-stamp
+files
+libandroid-23-java*/
+libandroid-uiautomator-23-java*/
+out/
+tmp/
