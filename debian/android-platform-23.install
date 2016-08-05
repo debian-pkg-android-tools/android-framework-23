@@ -1,0 +1,3 @@
+debian/android/build.prop		/usr/lib/android-sdk/platforms/android-23
+debian/android/sdk.properties		/usr/lib/android-sdk/platforms/android-23
+debian/android/source.properties	/usr/lib/android-sdk/platforms/android-23

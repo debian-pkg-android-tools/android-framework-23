@@ -41,6 +41,28 @@ The source code has been excerpted form the git repository
 We make these repositories into one single source package because the binary
 packages built here need source code from all of them.
 
+Files under the debian/android/ directory
+-----------------------------------------
+
+These files were created based on the information in the files listed below them.
+
+ * build.prop:
+   * From src:android-platform-tools-base
+     base/sdklib/src/main/java/com/android/sdklib/repository/local/LocalPlatformPkgInfo.java
+   * From src:android-platform-build
+     tools/buildinfo.sh
+     core/version_defaults.mk
+
+ * source.properties:
+   * From src:android-platform-development
+     sdk/platform_source.prop_template
+   * From src:android-platform-build
+     core/version_defaults.mk
+
+ * sdk.properties:
+   * From src:android-platform-development
+     sdk/sdk.properties
+
  -- Hans-Christoph Steiner <hans@eds.org>  Thu, 18 Sep 2014 16:37:50 -0400
  -- Kai-Chung Yan <seamlikok@gmail.com>  Tue, 17 Nov 2015 14:39:17 +0800
- -- Chirayu Desai <chirayudesai1@gmail.com>  Tue, 02 Aug 2016 19:05:11 +0530
+ -- Chirayu Desai <chirayudesai1@gmail.com>  Fri, 05 Aug 2016 15:43:47 +0530
