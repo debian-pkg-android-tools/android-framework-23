@@ -5,7 +5,7 @@ include /usr/share/dpkg/pkg-info.mk
 UPSTREAM_TAG := android-$(subst +,_,$(DEB_VERSION_UPSTREAM))
 REPOS := frameworks-base frameworks-opt-net-voip frameworks-opt-telephony libcore external/junit
 
-LOGTAGS := $(shell find core -name *.logtags)
+LOGTAGS := $(shell find frameworks/base/core -name *.logtags)
 
 debian/out/all-event-log-tags.txt: $(LOGTAGS)
 	merge-event-log-tags -o $@ $^
