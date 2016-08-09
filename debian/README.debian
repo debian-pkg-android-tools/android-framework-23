@@ -16,4 +16,13 @@ them, or that we do not have the needed files within this package.
     * -P debian/out/public_resources.xml
     * -templatedir build/tools/droiddoc/templates-sdk
 
+Aidl build
+==========
+
+We build the files upstream includes in their framework (android.jar)
+and framework.aidl respectively.
+The list can be see in debian/aidl.mk, which is derived from
+frameworks/base/Android.mk
+
  -- Kai-Chung Yan <seamlikok@gmail.com>  Thu, 09 Jun 2016 11:59:00 +0800
+ -- Chirayu Desai <chirayudesai1@gmail.com>  Wed, 10 Jul 2016 18:26:00 +0530

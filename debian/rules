@@ -13,10 +13,13 @@ debian/out/all-event-log-tags.txt: $(LOGTAGS)
 %/EventLogTags.java: %/EventLogTags.logtags debian/out/all-event-log-tags.txt
 	java-event-log-tags -o $@ $^
 
+aidl:
+	make -f debian/aidl.mk
+
 %:
 	dh $@
 
-override_dh_auto_build:
+override_dh_auto_build: aidl
 	mkdir -p debian/out/R
 	ln -s values-mcc310-mnc150 frameworks/base/core/res/res/values-mcc310-mnc170
 	ln -s values-mcc310-mnc150 frameworks/base/core/res/res/values-mcc310-mnc380

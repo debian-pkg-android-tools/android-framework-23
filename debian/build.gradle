@@ -203,40 +203,6 @@ project(':android') {
     }
   }
 
-  task aidl {
-    def aidlFiles = files(srcLocations).getAsFileTree().filter {
-      it.getPath().endsWith('.aidl')
-    }.getFiles()
-    aidlFiles.add(file("${rootDir}/../frameworks/base/packages/services/PacProcessor" +
-                       '/com/android/net/IProxyService.aidl'))
-    aidlFiles.add(file("${rootDir}/../frameworks/base/packages/services/Proxy" +
-                       '/com/android/net/IProxyCallback.aidl'))
-    aidlFiles.add(file("${rootDir}/../frameworks/base/packages/services/Proxy" +
-                       '/com/android/net/IProxyPortListener.aidl'))
-    def aidlPaths = aidlFiles.collect().join(' ')
-    def importPaths = ''
-    srcLocations.each { importPaths += "-I${file(it).getPath()} " }
-
-    inputs.files aidlFiles
-    outputs.dir "${buildDir}/aidl"
-    outputs.files "${buildDir}/framework.aidl"
-
-    doFirst {
-      mkdir "${buildDir}/aidl"
-      aidlFiles.each {
-        def cmd1 = "aidl $importPaths -o${buildDir}/aidl $it"
-        cmd1.execute().waitForProcessOutput(System.out, System.err)
-      }
-      def cmd2 = "aidl --preprocess ${buildDir}/framework.aidl $aidlPaths"
-      cmd2.execute().waitForProcessOutput(System.out, System.err)
-    }
-  }
-
-  stubs.dependsOn 'aidl'
-  clean.doLast {
-    delete "${buildDir}/aidl"
-    delete "${buildDir}/framework.aidl"
-  }
 }
 
 project(':uiautomator') {
