@@ -2,9 +2,10 @@ android-framework-23 (6.0.1+r55-1) UNRELEASED; urgency=medium
 
   [ Chirayu Desai ]
   * Initial release. (Closes: #833458)
+  * New package: android-platform-23 for misc files (Closes: #827214)
 
   [ Kai-Chung Yan ]
   * New package: libandroid-23-java for "android.jar"
   * New package: libandroid-uiautomator-23-java for "uiautomator.jar"
 
- -- Chirayu Desai <chirayudesai1@gmail.com>  Tue, 26 Jul 2016 22:47:46 +0530
+ -- Chirayu Desai <chirayudesai1@gmail.com>  Wed, 10 Aug 2016 19:43:50 +0530
