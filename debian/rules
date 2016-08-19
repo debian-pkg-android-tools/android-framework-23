@@ -49,7 +49,7 @@ override_dh_install:
 	$(RM) -r debian/libandroid-23-java/usr/share/maven-repo/com/android/android/debian
 
 get-orig-source: $(patsubst %, %.tar.gz, $(REPOS))
-	$(foreach repo, $(REPOS), mkdir -p $(DEB_SOURCE)-$(DEB_VERSION_UPSTREM)/$(subst -,/,$(repo));)
+	$(foreach repo, $(REPOS), mkdir -p $(DEB_SOURCE)-$(DEB_VERSION_UPSTREAM)/$(subst -,/,$(repo));)
 	$(foreach repo, $(REPOS), tar -f $(repo).tar.gz -z -x --directory $(DEB_SOURCE)-$(DEB_VERSION_UPSTREAM)/$(subst -,/,$(repo));)
 	tar --create --xz -f ../$(DEB_SOURCE)_$(DEB_VERSION_UPSTREAM).orig.tar.xz $(DEB_SOURCE)-$(DEB_VERSION_UPSTREAM)
 	rm -r $^ $(DEB_SOURCE)-$(DEB_VERSION_UPSTREAM)
