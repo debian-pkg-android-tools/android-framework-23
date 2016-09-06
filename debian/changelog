@@ -8,4 +8,4 @@ android-framework-23 (6.0.1+r55-1) unstable; urgency=medium
   * New package: libandroid-23-java for "android.jar"
   * New package: libandroid-uiautomator-23-java for "uiautomator.jar"
 
- -- Chirayu Desai <chirayudesai1@gmail.com>  Wed, 10 Aug 2016 19:43:50 +0530
+ -- Chirayu Desai <chirayudesai1@gmail.com>  Tue, 06 Sep 2016 18:04:16 +0200
