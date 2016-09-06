@@ -1,8 +1,8 @@
-android-framework-23 (6.0.1+r55-1) UNRELEASED; urgency=medium
+android-framework-23 (6.0.1+r55-1) unstable; urgency=medium
 
   [ Chirayu Desai ]
   * Initial release. (Closes: #833458)
-  * New package: android-platform-23 for misc files (Closes: #827214)
+  * New package: android-platform-23 for misc files (see #827214)
 
   [ Kai-Chung Yan ]
   * New package: libandroid-23-java for "android.jar"
