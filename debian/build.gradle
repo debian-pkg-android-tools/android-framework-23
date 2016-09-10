@@ -9,6 +9,7 @@ subprojects {
   sourceCompatibility = 1.7
   targetCompatibility = 1.7
   version = '23'
+  compileJava.options.encoding = 'UTF-8'
 
   repositories {
     maven { url 'file:///usr/share/maven-repo' }
