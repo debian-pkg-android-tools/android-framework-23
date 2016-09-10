@@ -17,7 +17,7 @@ aidl:
 	make -f debian/aidl.mk
 
 %:
-	dh $@
+	dh $@ --buildsystem=gradle
 
 override_dh_auto_build: aidl
 	mkdir -p debian/out/R
@@ -32,10 +32,10 @@ override_dh_auto_build: aidl
 	             --version-code 23 --version-name 6.0.1 \
 	             --skip-symbols-without-default-localization
 	unzip -q debian/out/framework-res.apk -d debian/out/framework-res
-	dh_auto_build --buildsystem=gradle -- --settings-file debian/settings.gradle assemble
+	dh_auto_build -- --settings-file debian/settings.gradle assemble
 
 override_dh_auto_clean:
-	dh_auto_clean --buildsystem=gradle
+	dh_auto_clean
 	mh_clean
 	$(RM) -r debian/.gradle debian/build .gradle
 	$(RM) -r debian/out
