@@ -42,11 +42,12 @@ subprojects {
       def stubsDir = "${buildDir}/stubs"
       def javaFlags = "-classpath $docletpath com.google.doclava.Doclava "
       /* From frameworks/base/Android.mk */
-      def doclavaFlags = "-classpath $classpath " +
-                         '-doclet com.google.doclava.Doclava ' +
+      def doclavaFlags = '-doclet com.google.doclava.Doclava ' +
+                         '-encoding UTF-8 ' +
                          '-hdf sdk.version 6.0 -hdf sdk.rel.id 1 -hdf sdk.preview 0 ' +
                          '-hide 111 -hide 113 ' +
                          '-hidePackage com.android.org.conscrypt ' +
+                         "-knowntags ${rootDir}/../frameworks/base/docs/knowntags.txt " +
                          '-nodocs ' +
                          '-offlinemode ' +
                          '-quiet ' +
