@@ -3203,6 +3203,9 @@ public final class CipherTest extends TestCase {
         }
     }
 
+    // Test that when reading GCM parameters encoded using ASN1, a value for the tag size
+    // not present indicates a value of 12.
+    // https://b/29876633
     public void test_DefaultGCMTagSizeAlgorithmParameterSpec() throws Exception {
         final String AES = "AES";
         final String AES_GCM = "AES/GCM/NoPadding";
@@ -3215,14 +3218,12 @@ public final class CipherTest extends TestCase {
             (byte) 14,    // DER encoding : total length
             (byte) 4,     // DER encoding : tag_OctetString
             (byte) 12,    // DER encoding : counter length
-            // Note that IV's size 12 bytes is recommended, but authentication tag size should be 16
-            // bytes.
             (byte) 0, (byte) 0, (byte) 0, (byte) 0, (byte) 0, (byte) 0,
             (byte) 0, (byte) 0, (byte) 0, (byte) 0, (byte) 0, (byte) 0 });
         cipher.init(Cipher.ENCRYPT_MODE, new SecretKeySpec(key, AES), param);
         byte[] ciphertext = cipher.update(input);
         byte[] tag = cipher.doFinal();
-        assertEquals(16, tag.length);
+        assertEquals(12, tag.length);
     }
 
     public void testAES_ECB_PKCS5Padding_ShortBuffer_Failure() throws Exception {
@@ -3536,6 +3537,33 @@ public final class CipherTest extends TestCase {
         Cipher cipher = Cipher.getInstance("RSA/NONE/OAEPPadding");
         cipher.init(Cipher.ENCRYPT_MODE, keyGen.generateKeyPair().getPublic());
         cipher.doFinal(new byte[] {1,2,3,4});
+    }
+
+    /*
+     * Check that two AAD updates are equivalent to one.
+     * http://b/27371173
+     */
+    public void test_AESGCMNoPadding_UpdateAADTwice_Success() throws Exception {
+        SecretKeySpec key = new SecretKeySpec(new byte[16], "AES");
+        GCMParameterSpec spec = new GCMParameterSpec(128, new byte[12]);
+        Cipher c1 = Cipher.getInstance("AES/GCM/NoPadding");
+        Cipher c2 = Cipher.getInstance("AES/GCM/NoPadding");
+
+        c1.init(Cipher.ENCRYPT_MODE, key, spec);
+        c1.updateAAD(new byte[] {
+                0x01, 0x02, 0x03, 0x04, 0x05,
+        });
+        c1.updateAAD(new byte[] {
+                0x06, 0x07, 0x08, 0x09, 0x10,
+        });
+
+        c2.init(Cipher.ENCRYPT_MODE, key, spec);
+        c2.updateAAD(new byte[] {
+                0x01, 0x02, 0x03, 0x04, 0x05,
+                0x06, 0x07, 0x08, 0x09, 0x10,
+        });
+
+        assertEquals(Arrays.toString(c1.doFinal()), Arrays.toString(c2.doFinal()));
     }
 
     /*
