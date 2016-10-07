@@ -1,3 +1,11 @@
-debian/android/build.prop		/usr/lib/android-sdk/platforms/android-23
-debian/android/sdk.properties		/usr/lib/android-sdk/platforms/android-23
-debian/android/source.properties	/usr/lib/android-sdk/platforms/android-23
+debian/android/activity_actions.txt  usr/lib/android-sdk/platforms/android-23/data
+debian/android/broadcast_actions.txt usr/lib/android-sdk/platforms/android-23/data
+debian/android/build.prop            usr/lib/android-sdk/platforms/android-23
+debian/android/categories.txt        usr/lib/android-sdk/platforms/android-23/data
+debian/android/features.txt          usr/lib/android-sdk/platforms/android-23/data
+debian/android/package.xml           usr/lib/android-sdk/platforms/android-23
+debian/android/sdk.properties        usr/lib/android-sdk/platforms/android-23
+debian/android/service_actions.txt   usr/lib/android-sdk/platforms/android-23/data
+debian/android/source.properties     usr/lib/android-sdk/platforms/android-23
+debian/android/widgets.txt           usr/lib/android-sdk/platforms/android-23/data
+frameworks/base/core/res/res         usr/lib/android-sdk/platforms/android-23/data
