@@ -1,11 +1,5 @@
-android-framework-23 (6.0.1+r55-1) unstable; urgency=medium
+android-framework-23 (6.0.1+r72-1) UNRELEASED; urgency=medium
 
-  [ Chirayu Desai ]
   * Initial release. (Closes: #833458)
-  * New package: android-platform-23 for misc files (see #827214)
 
-  [ Kai-Chung Yan ]
-  * New package: libandroid-23-java for "android.jar"
-  * New package: libandroid-uiautomator-23-java for "uiautomator.jar"
-
- -- Chirayu Desai <chirayudesai1@gmail.com>  Tue, 06 Sep 2016 18:04:16 +0200
+ -- Kai-Chung Yan <seamlikok@gmail.com>  Fri, 07 Oct 2016 19:11:58 +0800
