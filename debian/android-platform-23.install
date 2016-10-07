@@ -8,4 +8,5 @@ debian/android/sdk.properties        usr/lib/android-sdk/platforms/android-23
 debian/android/service_actions.txt   usr/lib/android-sdk/platforms/android-23/data
 debian/android/source.properties     usr/lib/android-sdk/platforms/android-23
 debian/android/widgets.txt           usr/lib/android-sdk/platforms/android-23/data
+development/tools/emulator/skins     usr/lib/android-sdk/platforms/android-23
 frameworks/base/core/res/res         usr/lib/android-sdk/platforms/android-23/data
