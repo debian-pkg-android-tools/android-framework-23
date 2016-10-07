@@ -5,15 +5,15 @@ Maintainer: Android Tools Maintainers <android-tools-devel@lists.alioth.debian.o
 Uploaders: Hans-Christoph Steiner <hans@eds.org>,
            Kai-Chung Yan <seamlikok@gmail.com>,
            Chirayu Desai <chirayudesai1@gmail.com>
-Build-Depends: aapt (>= 1:6.0.1+r43-1) [amd64 i386],
-               aidl (>= 1:6.0.1+r43-1) [amd64 i386],
+Build-Depends: aapt,
+               aidl,
+               android-logtags-tools,
                debhelper (>= 9),
+               default-jdk-headless | default-jdk (>= 2:1.7),
+               doclava-aosp,
                gradle-debian-helper,
                maven-repo-helper,
-Build-Depends-Indep: android-logtags-tools (>= 1:6.0.1+r16-4),
-                     default-jdk (>= 2:1.7),
-                     doclava-aosp (>= 6.0.1+r55-1),
-                     unzip
+               unzip
 Standards-Version: 3.9.8
 Homepage: https://android.googlesource.com
 Vcs-Git: https://anonscm.debian.org/git/android-tools/android-framework-23.git
