@@ -34,6 +34,7 @@ subprojects {
   task stubs {
     outputs.dir "${buildDir}/stubs"
     doFirst {
+      mkdir "${buildDir}/stubs"
       def sourceFiles = sourceSets.forStubs.allJava.join(' ')
       def classpath = configurations.forStubs.collect().join(':')
       def docletpath = "${configurations.doclava.collect().join(':')}:" +
@@ -61,10 +62,6 @@ subprojects {
 
   assemble.dependsOn 'poms'
   compileJava.dependsOn 'stubs'
-  clean.doLast {
-    delete "${buildDir}/*.pom"
-    delete "${buildDir}/stubs"
-  }
 }
 
 project(':android') {
@@ -88,17 +85,6 @@ project(':android') {
       "${rootDir}/../frameworks/base/test-runner/src",
       "${rootDir}/../frameworks/base/wifi/java"
     ]
-  }
-
-  dependencies {
-  /*
-    forStubs 'com.android:conscrypt:debian'
-    forStubs 'com.googlecode.libphonenumber:geocoder:2.x'
-    forStubs 'com.googlecode.libphonenumber:libphonenumber:debian'
-    forStubs 'junit:junit:4.x'
-    forStubs 'org.bouncycastle:bcprov:debian'
-    forStubs 'org.ccil.cowan.tagsoup:tagsoup:debian'
-    */
   }
 
   sourceSets {
