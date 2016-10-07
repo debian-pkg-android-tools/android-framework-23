@@ -53,6 +53,7 @@ subprojects {
                          '-quiet ' +
                          "-stubs $stubsDir " +
                          '-XDignore.symbol.file '
+      if (classpath.size() > 0) doclavaFlags += "-classpath $classpath "
       def process = "java $javaFlags $sourceFiles $doclavaFlags".execute()
       process.waitForProcessOutput(System.out, System.err)
       if (process.exitValue() != 0) {
