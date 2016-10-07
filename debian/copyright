@@ -4,18 +4,6 @@ Source: https://android.googlesource.com/platform/frameworks/base
         https://android.googlesource.com/platform/frameworks/opt/net/voip
         https://android.googlesource.com/platform/frameworks/opt/telephony
         https://android.googlesource.com/platform/libcore
-Files-Excluded: *.jar
-                *.zip
-                frameworks/base/core/res/res/values-mcc310-mnc170
-                frameworks/base/core/res/res/values-mcc310-mnc380
-                frameworks/base/core/tests
-                frameworks/base/data
-                frameworks/base/docs
-                frameworks/base/media/tests
-                frameworks/base/services
-                frameworks/base/tests
-                frameworks/base/tools/aapt2/data
-                frameworks/base/tools/preload
 
 Files: frameworks/base/*
 Copyright: 2005-2012, The Android Open Source Project

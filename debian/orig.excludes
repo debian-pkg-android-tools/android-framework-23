@@ -1,0 +1,14 @@
+*.compiled
+*.jar
+*.zip
+frameworks/base/core/res/res/values-mcc310-mnc170
+frameworks/base/core/res/res/values-mcc310-mnc380
+frameworks/base/core/tests/*
+frameworks/base/data/*
+frameworks/base/docs/downloads/*
+frameworks/base/docs/html-intl/*
+frameworks/base/docs/html/*
+frameworks/base/docs/image_sources/*
+frameworks/base/media/tests/*
+frameworks/base/tests/*
+frameworks/base/tools/aapt2/data/*
