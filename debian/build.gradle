@@ -67,49 +67,52 @@ subprojects {
 }
 
 project(':android') {
-  ext {
-    /* From <build/core/pathmap.mk> */
-    srcLocations = [
-      "${rootDir}/../frameworks/base/core/java",
-      "${rootDir}/../frameworks/base/drm/java",
-      "${rootDir}/../frameworks/base/graphics/java",
-      "${rootDir}/../frameworks/base/keystore/java",
-      "${rootDir}/../frameworks/base/location/java",
-      "${rootDir}/../frameworks/base/media/java",
-      "${rootDir}/../frameworks/base/media/mca/effect/java",
-      "${rootDir}/../frameworks/base/media/mca/filterfw/java",
-      "${rootDir}/../frameworks/base/media/mca/filterpacks/java",
-      "${rootDir}/../frameworks/base/opengl/java",
-      "${rootDir}/../frameworks/base/rs/java",
-      "${rootDir}/../frameworks/base/sax/java",
-      "${rootDir}/../frameworks/base/telecomm/java",
-      "${rootDir}/../frameworks/base/telephony/java",
-      "${rootDir}/../frameworks/base/test-runner/src",
-      "${rootDir}/../frameworks/base/wifi/java"
-    ]
-  }
-
   sourceSets {
     forStubs {
       java {
-        for (def dir in srcLocations) { srcDir(dir) }
+        /* From <build/core/pathmap.mk> */
+        srcDir "${buildDir}/aidl"
+        srcDir "${rootDir}/../external/junit/src/junit/framework"
+        srcDir "${rootDir}/../external/junit/src/junit/runner"
+        srcDir "${rootDir}/../frameworks/base/core/java"
+        srcDir "${rootDir}/../frameworks/base/drm/java"
+        srcDir "${rootDir}/../frameworks/base/graphics/java"
+        srcDir "${rootDir}/../frameworks/base/keystore/java"
+        srcDir "${rootDir}/../frameworks/base/location/java"
+        srcDir "${rootDir}/../frameworks/base/media/java"
+        srcDir "${rootDir}/../frameworks/base/media/mca/effect/java"
+        srcDir "${rootDir}/../frameworks/base/media/mca/filterfw/java"
+        srcDir "${rootDir}/../frameworks/base/media/mca/filterpacks/java"
+        srcDir "${rootDir}/../frameworks/base/opengl/java"
+        srcDir "${rootDir}/../frameworks/base/rs/java"
+        srcDir "${rootDir}/../frameworks/base/sax/java"
+        srcDir "${rootDir}/../frameworks/base/telecomm/java"
+        srcDir "${rootDir}/../frameworks/base/telephony/java"
+        srcDir "${rootDir}/../frameworks/base/test-runner/src"
+        srcDir "${rootDir}/../frameworks/base/wifi/java"
+        srcDir "${rootDir}/../frameworks/opt/net/voip/src/java/android"
+        srcDir "${rootDir}/../frameworks/opt/telephony/src/java/android"
         srcDir "${rootDir}/../libcore/dalvik/src/main/java"
         srcDir "${rootDir}/../libcore/json/src/main/java"
         srcDir "${rootDir}/../libcore/libart/src/main/java"
         srcDir "${rootDir}/../libcore/luni/src/main/java"
         srcDir "${rootDir}/../libcore/xml/src/main/java"
-        srcDir "${rootDir}/../frameworks/opt/net/voip/src/java/android"
-        srcDir "${rootDir}/../frameworks/opt/telephony/src/java/android"
-        srcDir "${rootDir}/../external/junit/src/junit/framework"
-        exclude 'JUnit4TestAdapter.java'
-        exclude 'JUnit4TestAdapterCache.java'
-        exclude 'JUnit4TestCaseFacade.java'
-        srcDir "${rootDir}/../external/junit/src/junit/runner"
-        srcDir "${buildDir}/aidl"
         srcDir "${rootDir}/out/R"
         /* From <libcore/Docs.mk> and
          * <development/build/tools/mk_sources_zip.py> */
+        exclude 'android/​content/​pm/​PackageInfoLite.java'
+        exclude 'android/​service/​voice/​IVoiceInteractionServ​ice.​class'
+        exclude 'android/​service/​voice/​IVoiceInteractionSess​ion.​class'
+        exclude 'android/​hardware/​soundtrigger/**'
+        exclude 'android/​telephony/​DataConnectionRealTim​eInfo.java'
+        exclude 'android/​telephony/​PreciseCallState.java'
+        exclude 'android/​telephony/​PreciseDataConnection​State.java'
+        
+        
         exclude 'dalvik/system/profiler'
+        exclude 'JUnit4TestAdapter.java'
+        exclude 'JUnit4TestAdapterCache.java'
+        exclude 'JUnit4TestCaseFacade.java'
         exclude 'libcore'
         exclude 'luni/src/main/java/java/text/IcuIteratorWrapper.java'
         exclude 'org/apache/harmony'
@@ -157,7 +160,13 @@ project(':android') {
     exclude 'android/os/storage/StorageVolume.class'
     exclude 'android/os/storage/VolumeInfo.class'
     exclude 'android/os/storage/VolumeRecord.class'
+    exclude 'android/telephony/VoLteServiceState.class'
     exclude 'android/util/IntArray.class'
+    exclude 'android/view/InputChannel.class'
+    exclude 'android/view/IWindow.class'
+    exclude 'android/view/IWindowFocusObserver.class'
+    exclude 'android/view/IWindowId.class'
+    exclude 'android/view/IWindowSession.class'
     exclude 'android/widget/ActionMenuPresenter.class'
     exclude 'java/util/jar/StrictJarFile.class'
     exclude {
