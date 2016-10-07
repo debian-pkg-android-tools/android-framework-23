@@ -1,11 +1,13 @@
 Format: https://www.debian.org/doc/packaging-manuals/copyright-format/1.0
 Upstream-Name: Android framework classes and services
-Source: https://android.googlesource.com/platform/frameworks/base
+Source: https://android.googlesource.com/platform/development
+        https://android.googlesource.com/platform/frameworks/base
         https://android.googlesource.com/platform/frameworks/opt/net/voip
         https://android.googlesource.com/platform/frameworks/opt/telephony
         https://android.googlesource.com/platform/libcore
 
-Files: frameworks/base/*
+Files: development/*
+       frameworks/base/*
        frameworks/opt/*
        libcore/*
 Copyright: 2005-2012, The Android Open Source Project
