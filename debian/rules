@@ -30,11 +30,13 @@ override_dh_auto_build: aidl
 	ln -s values-mcc310-mnc150 frameworks/base/core/res/res/values-mcc310-mnc380
 	aapt package -u -x -z -m -J debian/out/R \
 	             -M frameworks/base/core/res/AndroidManifest.xml \
-	             -S frameworks/base/core/res/res -A frameworks/base/core/res/assets \
+	             -S frameworks/base/core/res/res \
+	             -A frameworks/base/core/res/assets \
 	             -F debian/out/framework-res.apk \
-	             --min-sdk-version 23 --target-sdk-version 23 \
+	             --min-sdk-version ${ANDROID_API_LEVEL} \
+	             --target-sdk-version ${ANDROID_API_LEVEL} \
 	             --product default \
-	             --version-code 23 --version-name 6.0.1 \
+	             --version-code ${ANDROID_API_LEVEL} --version-name 6.0.1 \
 	             --skip-symbols-without-default-localization
 	7z x debian/out/framework-res.apk -odebian/out/framework-res
 	dh_auto_build -- \
@@ -54,7 +56,7 @@ override_dh_auto_clean:
 override_dh_install:
 	dh_install
 	mh_install
-	$(RM) -r debian/libandroid-23-java/usr/share/maven-repo/com/android/android/debian
+	$(RM) -r debian/libandroid-${ANDROID_API_LEVEL}-java/usr/share/maven-repo/com/android/android/debian
 	find debian/android-platform-${ANDROID_API_LEVEL}/usr/share/android-platform-${ANDROID_API_LEVEL}/emulator-skins -name *.ini -exec chmod -x '{}' \;
 	find debian/android-platform-${ANDROID_API_LEVEL}/usr/share/android-platform-${ANDROID_API_LEVEL}/res -name *.xml -exec chmod -x '{}' \;
 
