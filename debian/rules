@@ -36,7 +36,7 @@ override_dh_auto_build: aidl
 	             --product default \
 	             --version-code 23 --version-name 6.0.1 \
 	             --skip-symbols-without-default-localization
-	unzip -q debian/out/framework-res.apk -d debian/out/framework-res
+	7z x debian/out/framework-res.apk -odebian/out/framework-res
 	dh_auto_build -- \
 		-Dfile.encoding=UTF-8 \
 		--settings-file debian/settings.gradle \
