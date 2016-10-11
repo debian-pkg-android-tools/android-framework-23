@@ -1,1 +1,3 @@
-debian/out/android/build/framework.aidl   usr/lib/android-sdk/platforms/android-23
+#!/usr/bin/dh-exec
+
+debian/out/android/build/framework.aidl   usr/lib/android-sdk/platforms/android-${ANDROID_API_LEVEL}

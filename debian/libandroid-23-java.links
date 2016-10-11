@@ -1,1 +1,3 @@
-usr/share/java/com.android.android-23.jar   usr/lib/android-sdk/platforms/android-23/android.jar
+#!/usr/bin/dh-exec
+
+usr/share/java/com.android.android-${ANDROID_API_LEVEL}.jar   usr/lib/android-sdk/platforms/android-${ANDROID_API_LEVEL}/android.jar

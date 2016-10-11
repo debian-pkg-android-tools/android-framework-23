@@ -1,12 +1,14 @@
-debian/android/activity_actions.txt  usr/lib/android-sdk/platforms/android-23/data
-debian/android/broadcast_actions.txt usr/lib/android-sdk/platforms/android-23/data
-debian/android/build.prop            usr/lib/android-sdk/platforms/android-23
-debian/android/categories.txt        usr/lib/android-sdk/platforms/android-23/data
-debian/android/features.txt          usr/lib/android-sdk/platforms/android-23/data
-debian/android/package.xml           usr/lib/android-sdk/platforms/android-23
-debian/android/sdk.properties        usr/lib/android-sdk/platforms/android-23
-debian/android/service_actions.txt   usr/lib/android-sdk/platforms/android-23/data
-debian/android/source.properties     usr/lib/android-sdk/platforms/android-23
-debian/android/widgets.txt           usr/lib/android-sdk/platforms/android-23/data
-development/tools/emulator/skins/*   usr/share/android-platform-23/emulator-skins
-frameworks/base/core/res/res         usr/share/android-platform-23
+#!/usr/bin/dh-exec
+
+debian/android/activity_actions.txt  usr/lib/android-sdk/platforms/android-${ANDROID_API_LEVEL}/data
+debian/android/broadcast_actions.txt usr/lib/android-sdk/platforms/android-${ANDROID_API_LEVEL}/data
+debian/android/build.prop            usr/lib/android-sdk/platforms/android-${ANDROID_API_LEVEL}
+debian/android/categories.txt        usr/lib/android-sdk/platforms/android-${ANDROID_API_LEVEL}/data
+debian/android/features.txt          usr/lib/android-sdk/platforms/android-${ANDROID_API_LEVEL}/data
+debian/android/package.xml           usr/lib/android-sdk/platforms/android-${ANDROID_API_LEVEL}
+debian/android/sdk.properties        usr/lib/android-sdk/platforms/android-${ANDROID_API_LEVEL}
+debian/android/service_actions.txt   usr/lib/android-sdk/platforms/android-${ANDROID_API_LEVEL}/data
+debian/android/source.properties     usr/lib/android-sdk/platforms/android-${ANDROID_API_LEVEL}
+debian/android/widgets.txt           usr/lib/android-sdk/platforms/android-${ANDROID_API_LEVEL}/data
+development/tools/emulator/skins/*   usr/share/android-platform-${ANDROID_API_LEVEL}/emulator-skins
+frameworks/base/core/res/res         usr/share/android-platform-${ANDROID_API_LEVEL}

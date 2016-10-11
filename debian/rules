@@ -9,8 +9,8 @@ REPOS := development \
          frameworks-opt-telephony \
          libcore \
          external/junit
-
 LOGTAGS := $(shell find frameworks/base/core -name *.logtags)
+export ANDROID_API_LEVEL = 23
 
 debian/out/all-event-log-tags.txt: $(LOGTAGS)
 	merge-event-log-tags -o $@ $^

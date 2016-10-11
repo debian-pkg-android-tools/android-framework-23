@@ -1,2 +1,4 @@
-usr/share/android-platform-23/emulator-skins usr/lib/android-sdk/platforms/android-23/skins
-usr/share/android-platform-23/res            usr/lib/android-sdk/platforms/android-23/data/res
+#!/usr/bin/dh-exec
+
+usr/share/android-platform-${ANDROID_API_LEVEL}/emulator-skins usr/lib/android-sdk/platforms/android-${ANDROID_API_LEVEL}/skins
+usr/share/android-platform-${ANDROID_API_LEVEL}/res            usr/lib/android-sdk/platforms/android-${ANDROID_API_LEVEL}/data/res
