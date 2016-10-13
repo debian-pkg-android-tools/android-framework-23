@@ -10,5 +10,5 @@ debian/android/sdk.properties        usr/lib/android-sdk/platforms/android-${AND
 debian/android/service_actions.txt   usr/lib/android-sdk/platforms/android-${ANDROID_API_LEVEL}/data
 debian/android/source.properties     usr/lib/android-sdk/platforms/android-${ANDROID_API_LEVEL}
 debian/android/widgets.txt           usr/lib/android-sdk/platforms/android-${ANDROID_API_LEVEL}/data
-development/tools/emulator/skins/*   usr/share/android-platform-${ANDROID_API_LEVEL}/emulator-skins
-frameworks/base/core/res/res         usr/share/android-platform-${ANDROID_API_LEVEL}
+development/tools/emulator/skins/*   usr/share/android-sdk-platform-${ANDROID_API_LEVEL}/emulator-skins
+frameworks/base/core/res/res         usr/share/android-sdk-platform-${ANDROID_API_LEVEL}

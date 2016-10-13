@@ -1,0 +1,4 @@
+#!/usr/bin/dh-exec
+
+usr/share/android-sdk-platform-${ANDROID_API_LEVEL}/emulator-skins usr/lib/android-sdk/platforms/android-${ANDROID_API_LEVEL}/skins
+usr/share/android-sdk-platform-${ANDROID_API_LEVEL}/res            usr/lib/android-sdk/platforms/android-${ANDROID_API_LEVEL}/data/res

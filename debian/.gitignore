@@ -9,6 +9,6 @@ debhelper-build-stamp
 files
 libandroid-23-java*/
 libandroid-uiautomator-23-java*/
-android-platform-23*/
+android-sdk-platform-23/
 out/
 tmp/

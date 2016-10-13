@@ -34,7 +34,7 @@ Description: UI Automator framework for API Level 23 (Marshmallow)
  This package provides "uiautomator.jar" in the "Android platforms" that is used
  to build an Android application.
 
-Package: android-platform-23
+Package: android-sdk-platform-23
 Section: devel
 Architecture: all
 Depends: libandroid-23-java (>= ${source:Version}),
