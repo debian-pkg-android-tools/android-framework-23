@@ -58,6 +58,7 @@ override_dh_install:
 	mh_install
 	$(RM) -r debian/libandroid-${ANDROID_API_LEVEL}-java/usr/share/maven-repo/com/android/android/debian
 	find debian/android-platform-${ANDROID_API_LEVEL}/usr/share/android-platform-${ANDROID_API_LEVEL}/emulator-skins -name *.ini -exec chmod -x '{}' \;
+	find debian/android-platform-${ANDROID_API_LEVEL}/usr/share/android-platform-${ANDROID_API_LEVEL}/emulator-skins -name layout -exec chmod -x '{}' \;
 	find debian/android-platform-${ANDROID_API_LEVEL}/usr/share/android-platform-${ANDROID_API_LEVEL}/res -name *.xml -exec chmod -x '{}' \;
 
 get-orig-source: $(patsubst %, %.tar.gz, $(REPOS))
