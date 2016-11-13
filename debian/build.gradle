@@ -42,8 +42,14 @@ subprojects {
                          '-offlinemode ' +
                          '-quiet ' +
                          "-stubs $stubsDir " +
-                         '-XDignore.symbol.file '
+                         '-XDignore.symbol.file ' +
+                         "-api ${temporaryDir}/current.txt " +
+                         "-removedApi ${temporaryDir}/removed.txt "
       if (classpath.size() > 0) doclavaFlags += "-classpath $classpath "
+      copy {
+        from apiListLocation
+        into temporaryDir
+      }
       def process = "java $javaFlags $sourceFiles $doclavaFlags".execute()
       process.waitForProcessOutput(System.out, System.err)
       if (process.exitValue() != 0) {
@@ -54,6 +60,7 @@ subprojects {
 }
 
 project(':android') {
+  ext.apiListLocation = "${rootDir}/../frameworks/base/api"
   sourceSets {
     forStubs {
       java {
@@ -191,6 +198,8 @@ project(':android') {
 }
 
 project(':uiautomator') {
+  ext.apiListLocation = "${rootDir}/../frameworks/base/cmds/uiautomator/api"
+  stubs.dependsOn ':android:jar'
   dependencies {
     compile project(':android')
     forStubs project(':android')
