@@ -12,6 +12,7 @@ them, or that we do not have the needed files within this package.
       (For ensuring reprodicibility)
     * -J-Xmx1280m
     * -P debian/out/public_resources.xml
+    * -since prebuilts/sdk/api/<API_Level>.xml <API_Level>
     * -templatedir build/tools/droiddoc/templates-sdk
 
 Aidl build
