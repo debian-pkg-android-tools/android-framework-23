@@ -95,14 +95,10 @@ project(':android') {
         /* From <libcore/Docs.mk> and
          * <development/build/tools/mk_sources_zip.py> */
         exclude 'android/​content/​pm/​PackageInfoLite.java'
-        exclude 'android/​service/​voice/​IVoiceInteractionServ​ice.​class'
-        exclude 'android/​service/​voice/​IVoiceInteractionSess​ion.​class'
         exclude 'android/​hardware/​soundtrigger/**'
         exclude 'android/​telephony/​DataConnectionRealTim​eInfo.java'
         exclude 'android/​telephony/​PreciseCallState.java'
         exclude 'android/​telephony/​PreciseDataConnection​State.java'
-        
-        
         exclude 'dalvik/system/profiler'
         exclude 'JUnit4TestAdapter.java'
         exclude 'JUnit4TestAdapterCache.java'
@@ -154,6 +150,8 @@ project(':android') {
     exclude 'android/os/storage/StorageVolume.class'
     exclude 'android/os/storage/VolumeInfo.class'
     exclude 'android/os/storage/VolumeRecord.class'
+    exclude 'android/​service/​voice/​IVoiceInteractionServ​ice.​class'
+    exclude 'android/​service/​voice/​IVoiceInteractionSess​ion.​class'
     exclude 'android/telephony/VoLteServiceState.class'
     exclude 'android/util/IntArray.class'
     exclude 'android/view/InputChannel.class'
