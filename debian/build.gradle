@@ -1,6 +1,5 @@
 subprojects {
   apply plugin: 'java'
-  apply plugin: 'maven'
 
   /* See the API Level defined in version_defaults.mk provided by
    * src:android-platform-build.
@@ -11,10 +10,6 @@ subprojects {
   version = '23'
   compileJava.options.encoding = 'UTF-8'
 
-  repositories {
-    maven { url 'file:///usr/share/maven-repo' }
-  }
-
   configurations {
     doclava /* Classpaths for executing Doclava */
     forStubs /* For generating stubs */
@@ -24,15 +19,10 @@ subprojects {
     doclava 'com.google.doclava:doclava:debian'
   }
 
-  task poms {
-    outputs.files "${buildDir}/${project.name}.pom"
-    doFirst {
-      pom { project {} }.writeTo("${buildDir}/${project.name}.pom")
-    }
-  }
-
   task stubs {
     outputs.dir "${buildDir}/stubs"
+    outputs.files "${buildDir}/stubs/**/*.java"
+    compileJava.dependsOn 'stubs'
     doFirst {
       mkdir "${buildDir}/stubs"
       def sourceFiles = sourceSets.forStubs.allJava.join(' ')
@@ -61,9 +51,6 @@ subprojects {
       }
     }
   }
-
-  assemble.dependsOn 'poms'
-  compileJava.dependsOn 'stubs'
 }
 
 project(':android') {
