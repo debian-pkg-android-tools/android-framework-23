@@ -22,7 +22,7 @@ aidl:
 	make -f debian/aidl.mk
 
 %:
-	dh $@ --buildsystem=gradle
+	dh $@ --buildsystem=gradle --with maven-repo-helper
 
 override_dh_auto_build: aidl
 	mkdir -p debian/out/R
@@ -46,7 +46,6 @@ override_dh_auto_build: aidl
 
 override_dh_auto_clean:
 	dh_auto_clean
-	mh_clean
 	$(RM) -r debian/.gradle debian/build .gradle
 	$(RM) -r debian/out
 	$(RM) $(LOGTAGS:.logtags=.java)
@@ -55,11 +54,14 @@ override_dh_auto_clean:
 
 override_dh_install:
 	dh_install
-	mh_install
-	$(RM) -r debian/libandroid-$(ANDROID_API_LEVEL)-java/usr/share/maven-repo/com/android/android/debian
 	find debian/android-sdk-platform-$(ANDROID_API_LEVEL)/usr/share/android-sdk-platform-$(ANDROID_API_LEVEL)/emulator-skins -name *.ini -exec chmod -x '{}' \;
 	find debian/android-sdk-platform-$(ANDROID_API_LEVEL)/usr/share/android-sdk-platform-$(ANDROID_API_LEVEL)/emulator-skins -name layout -exec chmod -x '{}' \;
 	find debian/android-sdk-platform-$(ANDROID_API_LEVEL)/usr/share/android-sdk-platform-$(ANDROID_API_LEVEL)/res -name *.xml -exec chmod -x '{}' \;
+
+override_mh_install:
+	mh_install
+	$(RM) -r debian/libandroid-$(ANDROID_API_LEVEL)-java/usr/share/maven-repo/com/android/android/debian
+	$(RM) -r debian/libandroid-uiautomator-$(ANDROID_API_LEVEL)-java/usr/share/maven-repo/com/android/uiautomator/debian
 
 get-orig-source: $(patsubst %, %.tar.gz, $(REPOS))
 	$(foreach repo, $(REPOS), mkdir -p $(DEB_SOURCE)-$(DEB_VERSION_UPSTREAM)/$(subst -,/,$(repo));)
