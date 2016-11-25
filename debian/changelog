@@ -1,4 +1,4 @@
-android-framework-23 (6.0.1+r72-2) UNRELEASED; urgency=medium
+android-framework-23 (6.0.1+r72-2) unstable; urgency=medium
 
   * d/build.gradle:
     * Declare :uiautomator:stubs dependsOn :android:jar, fixing FTBFS
@@ -6,7 +6,7 @@ android-framework-23 (6.0.1+r72-2) UNRELEASED; urgency=medium
   * Update the usage of gradle-debian-helper
   * d/rules: Update the usage of maven-debian-helper
 
- -- Kai-Chung Yan <seamlikok@gmail.com>  Wed, 16 Nov 2016 16:41:09 +0800
+ -- Kai-Chung Yan <seamlikok@gmail.com>  Fri, 25 Nov 2016 13:55:33 +0800
 
 android-framework-23 (6.0.1+r72-1) unstable; urgency=medium
 
