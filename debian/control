@@ -12,7 +12,7 @@ Build-Depends: aapt,
                default-jdk-headless | default-jdk (>= 2:1.7),
                dh-exec,
                doclava-aosp,
-               gradle-debian-helper (>= 1.4),
+               gradle-debian-helper (>= 1.4~),
                maven-repo-helper,
                p7zip-full,
                proguard
