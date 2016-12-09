@@ -64,7 +64,14 @@ These files were created based on the information in the files listed below them
    * From src:android-platform-development
      sdk/sdk.properties
 
+debian/shrinkedAndroid.proguard.flags
+-------------------------------------
+
+Copied from [1]. This file does not seem to change any time soon.
+
 Other unmentioned files are copied from the upstream Google repository.
+
+[1]: https://android.googlesource.com/platform/dalvik/+/master/dx/shrinkedAndroid.proguard.flags
 
  -- Hans-Christoph Steiner <hans@eds.org>  Thu, 18 Sep 2014 16:37:50 -0400
  -- Kai-Chung Yan <seamlikok@gmail.com>  Fri, 07 Oct 2016 19:11:58 +0800

@@ -14,7 +14,8 @@ Build-Depends: aapt,
                doclava-aosp,
                gradle-debian-helper (>= 1.4),
                maven-repo-helper,
-               p7zip-full
+               p7zip-full,
+               proguard
 Standards-Version: 3.9.8
 Homepage: https://android.googlesource.com
 Vcs-Git: https://anonscm.debian.org/git/android-tools/android-framework-23.git

@@ -43,6 +43,9 @@ override_dh_auto_build: aidl
 		-Dfile.encoding=UTF-8 \
 		--settings-file debian/settings.gradle \
 		assemble
+	proguard -include debian/shrinkedAndroid.proguard.flags \
+	         -injars debian/out/android/build/libs/android-$(ANDROID_API_LEVEL).jar\(**/*.class\) \
+	         -outjars debian/out/shrinkedAndroid.jar
 
 override_dh_auto_clean:
 	dh_auto_clean

@@ -1,3 +1,4 @@
 #!/usr/bin/dh-exec
 
 debian/out/android/build/framework.aidl   usr/lib/android-sdk/platforms/android-${ANDROID_API_LEVEL}
+debian/out/shrinkedAndroid.jar            usr/share/libandroid-${ANDROID_API_LEVEL}-java
