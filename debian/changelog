@@ -1,3 +1,11 @@
+android-framework-23 (6.0.1+r72-3) unstable; urgency=medium
+
+  * Build-Depends on gradle-debian-helper (>= 1.4~) for backport friendly
+  * Build shrinkedAndroid.jar
+    * Build-Depends on proguard
+
+ -- Kai-Chung Yan <seamlikok@gmail.com>  Fri, 09 Dec 2016 21:14:29 +0800
+
 android-framework-23 (6.0.1+r72-2) unstable; urgency=medium
 
   * d/build.gradle:
